@@ -1,8 +1,6 @@
 package com.example.khaled.staytuned.network;
 
-import com.example.khaled.staytuned.model.Response;
-
-import java.util.List;
+import com.example.khaled.staytuned.model.ParentResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,5 +13,5 @@ public interface GetDataService {
 
 
     @GET("/search?q=world-cup&section=football&api-key=test")
-    Call<Response> getAllNews();
+    Call<ParentResponse> getResponse();
 }
