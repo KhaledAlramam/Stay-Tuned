@@ -17,10 +17,22 @@ public class Results {
     @SerializedName("webPublicationDate")
     private String date;
 
-    public Results(String webTitle, String webUrl, String date) {
+    @SerializedName("fields")
+    private Field field;
+
+    public Results(String webTitle, String webUrl, String date, Field field) {
         this.webTitle = webTitle;
         this.webUrl = webUrl;
         this.date = date;
+        this.field=field;
+    }
+
+    public Field getField() {
+        return field;
+    }
+
+    public void setField(Field field) {
+        this.field = field;
     }
 
     public String getWebTitle() {

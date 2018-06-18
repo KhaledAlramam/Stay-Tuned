@@ -4,6 +4,7 @@ import com.example.khaled.staytuned.model.ParentResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Url;
 
 /**
  * Created by khaled on 6/12/18.
@@ -11,7 +12,6 @@ import retrofit2.http.GET;
 
 public interface GetDataService {
 
-
-    @GET("/search?q=world-cup&section=football&api-key=test")
-    Call<ParentResponse> getResponse();
+    @GET
+    Call<ParentResponse> getResponse(@Url String url);
 }
