@@ -24,10 +24,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     private List<Results> news;
     private Context context;
-    
+    CustomItemClickListener listener;
 
-    public NewsAdapter(List<Results> news){
+    public NewsAdapter(List<Results> news,CustomItemClickListener listener){
         this.news=news;
+        this.listener=listener;
     }
 
     @NonNull
@@ -35,8 +36,15 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView= LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.news_item,parent,false);
+        final MyViewHolder myViewHolder=new MyViewHolder(itemView);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(v,myViewHolder.getAdapterPosition());
+            }
+        });
         context=parent.getContext();
-        return new MyViewHolder(itemView);
+        return myViewHolder;
     }
 
     @Override

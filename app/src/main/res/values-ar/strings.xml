@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stay tuned!</string>
+    <string name="fetch_failure">حدث خطأ ما من فضلك تاكد من صحة الانترنت</string>
+</resources>

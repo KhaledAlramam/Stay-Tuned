@@ -28,6 +28,8 @@
                 android:layout_height="150dp"/>
 
             <TextView
+                android:textSize="18sp"
+                android:textColor="#000000"
                 android:paddingLeft="3dp"
                 tools:text="MoSalah running down the field"
                 android:background="#FFFFFF"
