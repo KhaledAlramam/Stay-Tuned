@@ -3,6 +3,7 @@ package com.example.khaled.staytuned;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,15 +51,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Results result=news.get(position);
-        Field field=result.getField();
-        String url=result.getWebUrl();
-        String thumbnailLink=field.getThumbnail();
         holder.newsTitle.setText(result.getWebTitle());
-        GlideApp
-                .with(context)
-                .load(thumbnailLink)
-                .centerCrop()
-                .into(holder.newsThumbnail);
+        Field field=result.getField();
+        if (field!=null){
+        String thumbnailLink=field.getThumbnail();
+            GlideApp
+                    .with(context)
+                    .load(thumbnailLink)
+                    .centerCrop()
+                    .into(holder.newsThumbnail);
+        }else{
+            holder.newsThumbnail.setImageResource(R.drawable.fifa);
+        }
     }
 
     @Override

@@ -49,8 +49,13 @@ public class HomePage extends AppCompatActivity {
         previousPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentPage >1) currentPage--;
-                getResponse();
+                if (currentPage >1) {
+                    currentPage--;
+                    getResponse();
+                }else {
+                    Toast.makeText(HomePage.this,getString(R.string.first_page),Toast.LENGTH_LONG)
+                            .show();
+                }
             }
         });
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +74,7 @@ public class HomePage extends AppCompatActivity {
         progressDoalog.setMessage("Loading....");
         progressDoalog.show();
         service=RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-        Call<ParentResponse> call=service.getResponse("/search?q=world-cup-2018&section=football&api-key=test&show-fields=thumbnail&page="+String.valueOf(currentPage));
+        Call<ParentResponse> call=service.getResponse("/search?q=world-cup-2018&section=football&api-key=9e6c2126-8152-4cc3-9732-0c7a5ee4eb6e&show-fields=thumbnail&page="+String.valueOf(currentPage));
         call.enqueue(new Callback<ParentResponse>() {
             @Override
             public void onResponse(Call<ParentResponse> call, Response<ParentResponse> response) {

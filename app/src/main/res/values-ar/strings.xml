@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Stay tuned!</string>
     <string name="fetch_failure">حدث خطأ ما من فضلك تاكد من صحة الانترنت</string>
+    <string name="first_page">انت بالفعل في الصفحه الاولي</string>
 </resources>

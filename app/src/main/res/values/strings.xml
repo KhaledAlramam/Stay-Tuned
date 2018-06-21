@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Stay tuned!</string>
     <string name="fetch_failure">Something went wrong...Please try later!</string>
+    <string name="first_page">This is already the first page</string>
 </resources>
